@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dadosapp
+spec:
+  selector:
+    matchLabels:
+      app: dadosapp
+  template:
+    metadata:
+      labels:
+        app: dadosapp
+    spec:
+      containers:
+      - name: dadosapp
+        image: kiverling/dadosapp
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
