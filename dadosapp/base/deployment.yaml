@@ -20,6 +20,9 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 5000
+        envFrom:
+        - configMapRef:
+            name: dadosapp
 ---
 apiVersion: v1
 kind: Service
@@ -33,3 +36,10 @@ spec:
   - port: 5000
     nodePort: 30050
 
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dadosapp
+data:
+  MESSAGE: Mi Primera Chamba
