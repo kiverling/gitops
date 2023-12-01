@@ -20,3 +20,16 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dadosapp
+spec:
+  selector:
+    app: dadosapp
+  type : NodePort
+  ports:
+  - port: 5000
+    nodePort: 30050
+
