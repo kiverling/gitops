@@ -26,14 +26,14 @@ spec:
         startupProbe:
           httpGet:
               path: /
-              port: 5000
+              port: 30050
           initialDelaySeconds: 10
           periodSeconds: 10
           failureThreshold: 10
         livenessProbe:
           httpGet:
               path: /
-              port: 5000
+              port: 30050
           initialDelaySeconds: 6
           periodSeconds: 6
           failureThreshold: 10
