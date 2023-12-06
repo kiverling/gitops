@@ -1,0 +1,127 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  creationTimestamp: "2023-12-06T22:32:24Z"
+  generation: 12
+  name: dadosapp
+  namespace: argocd
+  resourceVersion: "2351"
+  uid: d21a2a93-ba5d-45f3-b2c8-7006120ea1bc
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: dadosapp/envs/devs
+    repoURL: https://github.com/Kiverling/gitops.git
+    targetRevision: HEAD
+status:
+  controllerNamespace: argocd
+  health:
+    status: Progressing
+  history:
+  - deployStartedAt: "2023-12-06T22:35:10Z"
+    deployedAt: "2023-12-06T22:35:11Z"
+    id: 0
+    revision: 975f70e909e4c51123b64aaff36106cd4f70a2d0
+    source:
+      path: dadosapp/envs/devs
+      repoURL: https://github.com/Kiverling/gitops.git
+      targetRevision: HEAD
+  operationState:
+    finishedAt: "2023-12-06T22:35:11Z"
+    message: successfully synced (all tasks run)
+    operation:
+      initiatedBy:
+        username: admin
+      retry: {}
+      sync:
+        revision: 975f70e909e4c51123b64aaff36106cd4f70a2d0
+        syncStrategy:
+          hook: {}
+    phase: Succeeded
+    startedAt: "2023-12-06T22:35:10Z"
+    syncResult:
+      resources:
+      - group: ""
+        hookPhase: Running
+        kind: Namespace
+        message: namespace/dadosapp created
+        name: dadosapp
+        namespace: ""
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: ConfigMap
+        message: configmap/dadosapp created
+        name: dadosapp
+        namespace: dadosapp
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: Service
+        message: service/dadosapp created
+        name: dadosapp
+        namespace: dadosapp
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: apps
+        hookPhase: Running
+        kind: Deployment
+        message: deployment.apps/dadosapp created
+        name: dadosapp
+        namespace: dadosapp
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      revision: 975f70e909e4c51123b64aaff36106cd4f70a2d0
+      source:
+        path: dadosapp/envs/devs
+        repoURL: https://github.com/Kiverling/gitops.git
+        targetRevision: HEAD
+  reconciledAt: "2023-12-06T22:35:11Z"
+  resources:
+  - kind: ConfigMap
+    name: dadosapp
+    namespace: dadosapp
+    status: Synced
+    version: v1
+  - kind: Namespace
+    name: dadosapp
+    status: Synced
+    version: v1
+  - health:
+      status: Healthy
+    kind: Service
+    name: dadosapp
+    namespace: dadosapp
+    status: Synced
+    version: v1
+  - group: apps
+    health:
+      message: 'Waiting for rollout to finish: 0 of 1 updated replicas are available...'
+      status: Progressing
+    kind: Deployment
+    name: dadosapp
+    namespace: dadosapp
+    status: Synced
+    version: v1
+  sourceType: Kustomize
+  summary:
+    images:
+    - kiverling/dadosapp
+  sync:
+    comparedTo:
+      destination:
+        server: https://kubernetes.default.svc
+      source:
+        path: dadosapp/envs/devs
+        repoURL: https://github.com/Kiverling/gitops.git
+        targetRevision: HEAD
+    revision: 975f70e909e4c51123b64aaff36106cd4f70a2d0
+    status: Synced
