@@ -16,7 +16,7 @@ spec:
         image: kiverling/dadosapp
         resources:
           limits:
-            memory: "128Mi"
+            memory: "256Mi"
             cpu: "500m"
         ports:
         - containerPort: 5000
@@ -29,7 +29,7 @@ spec:
               port: 5000
           initialDelaySeconds: 10
           periodSeconds: 10
-          failureThreshold: 10
+          failureThreshold: 50
         livenessProbe:
           httpGet:
               path: /
