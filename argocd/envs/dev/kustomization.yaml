@@ -7,5 +7,5 @@ configMapGenerator:
   namespace: argocd
   behavior: merge
   literals:
-  - accounts.tordek= apiKey, login
-  - accounts.tordek.enabled= "true"
+  - accounts.tordek=apiKey, login
+  - accounts.tordek.enabled=true
