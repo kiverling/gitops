@@ -13,8 +13,9 @@ spec:
       env: dev
   template:
     metadata:
-      app: db
-      env: dev
+      labels:
+        app: db
+        env: dev
     spec:
       containers:
       - name: db-mysql
