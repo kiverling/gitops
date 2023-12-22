@@ -13,3 +13,5 @@ data:
   accounts.tordek: apiKey, login
   # disables user. User is enabled by default
   accounts.tordek.enabled: "true"
+  server.tls.enabled: "true"
+  server.tls.secretName: argocd.taitor.ar
