@@ -27,4 +27,4 @@ spec:
             cpu: "500m"
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: "paswor
+          value: "paswor"
