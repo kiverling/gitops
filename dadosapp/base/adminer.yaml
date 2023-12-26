@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: db-mysql
+  name: adminer
   namespace: dadosapp
   labels:
-    app: db
+    app: adminer
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: db
+      app: adminer
       env: dev
   template:
     metadata:
       labels:
-        app: db
+        app: adminer
         env: dev
     spec:
       containers:
-      - name: db-mysql
-        image: mysql:latest
+      - name: adminer
+        image: dockage/adminer:latest
         ports:
         - containerPort: 3306
         resources:
@@ -36,9 +36,9 @@ metadata:
   name: myapp
 spec:
   selector:
-      app: db
+      app: adminer
       env: dev
-  type : ClusterIP
+  type : NodePort
   ports:
   - port: 3306
     nodePort: 30060
