@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: adminer
-        image: dockage/adminer:latest
+        image: adminer:latest
         ports:
         - containerPort: 80
         resources:
