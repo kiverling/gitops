@@ -9,3 +9,5 @@ configMapGenerator:
   literals:
   - accounts.tordek=apiKey, login
   - accounts.tordek.enabled=true
+  - server.tls.enabled=true
+  - server.tls.secretName=argocd-tls-secret
