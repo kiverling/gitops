@@ -11,9 +11,9 @@ spec:
   rules:
   - host: argocd.traitor.ar
     http:
-      paths:
+      paths: 
       - backend:
           serviceName: argocd-server
           servicePort: https
         pathType: Prefix
-      
+        path: /
