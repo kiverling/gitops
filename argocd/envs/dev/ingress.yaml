@@ -4,37 +4,13 @@ metadata:
   name: argocd-server-ingress
   namespace: argocd
   annotations:
-    kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
-spec:
-  rules:
-    - host: argocd.traitor.ar
-      http:
-        paths:
-          - backend:
-              service:
-                name: argocd-server
-                port:
-                  number: 443
-            pathType: Prefix
-            path: /
-  tls:
-  - hosts:
-    - argocd.example.com
-    secretName: argocd-server-tls
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: argocd-server-grpc-ingress
-  namespace: argocd
-  annotations:
-    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
 spec:
   ingressClassName: nginx
   rules:
-  - http:
+  - host: argocd.example.com
+    http:
       paths:
       - path: /
         pathType: Prefix
@@ -43,8 +19,3 @@ spec:
             name: argocd-server
             port:
               name: https
-    host: grpc.argocd.traitor.ar
-  tls:
-  - hosts:
-    - grpc.argocd.traitor.ar
-    secretName: argocd-ingress-grpc
