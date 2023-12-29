@@ -9,11 +9,13 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
 spec:
   rules:
-  - host: argocd.traitor.ar
-    http:
-      paths: 
-      - backend:
-          serviceName: argocd-server
-          servicePort: https
-        pathType: Prefix
-        path: /
+    - host: argocd.traitor.ar
+      http:
+        paths:
+          - backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 443
+            pathType: Prefix
+            path: /
