@@ -23,3 +23,28 @@ spec:
   - hosts:
     - argocd.example.com
     secretName: argocd-server-tls
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-server-grpc-ingress
+  namespace: argocd
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              name: https
+    host: grpc.argocd.traitor.ar
+  tls:
+  - hosts:
+    - grpc.argocd.traitor.ar
+    secretName: argocd-ingress-grpc
