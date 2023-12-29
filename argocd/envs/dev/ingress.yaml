@@ -1,15 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: argocd-server-http-ingress
+  name: argocd-server-ingress
   namespace: argocd
   annotations:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+
 spec:
   ingressClassName: nginx
   rules:
-  - http:
+  - host: argocd.traitor.ar
+    http:
       paths:
       - path: /
         pathType: Prefix
@@ -17,9 +20,4 @@ spec:
           service:
             name: argocd-server
             port:
-              name: http
-    host: argocd.traitor.ar
-  tls:
-  - hosts:
-    - argocd.traitor.ar
-    secretName: argocd-ingress-http
+              name: https
