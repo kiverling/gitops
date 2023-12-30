@@ -47,6 +47,7 @@ kind: Ingress
 metadata:
   name: traitor-ingress
 spec:
+  ingressClassName: nginx
   rules:
   - host: adminer.traitor.ar
     http:
