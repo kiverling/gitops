@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
 - ingressdadosapp.yaml
 - namespace.yaml
+- configmap.yaml
 - ../../base
 namespace: prod-dadosapp

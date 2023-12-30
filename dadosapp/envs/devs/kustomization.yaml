@@ -4,5 +4,6 @@ resources:
 - ingressdadosapp.yaml
 - adminer.yaml
 - namespace.yaml
+- configmap.yaml
 - ../../base
 namespace: dadosapp
