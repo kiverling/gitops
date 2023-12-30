@@ -23,7 +23,7 @@ spec:
         env:
          - name: "MESSAGE"
            valueFrom:
-             configMapRef:
+             configMapKeyRef:
                name: dadosapp
                key: MESSAGE
              
