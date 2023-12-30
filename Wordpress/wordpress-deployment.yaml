@@ -10,7 +10,29 @@ spec:
   selector:
     app: wordpress
     tier: frontend
-  type: LoadBalancer
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wordpress-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: wordpress.traitor.ar
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: wordpress
+            port:
+              number: 80
+    tls:
+    - hosts:
+        - adminer.traitor.ar
+      secretName: traitor-cert
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -22,9 +44,6 @@ spec:
   accessModes:
     - ReadWriteOnce
   resources:
-   limits: 
-      memory: "256Mi"
-      cpu: "500m"
    requests:
       storage: 20Gi
 ---
@@ -49,6 +68,10 @@ spec:
     spec:
       containers:
       - image: wordpress:6.2.1-apache
+        resources:
+          limits: 
+            memory: "256Mi"
+            cpu: "500m"
         name: wordpress
         env:
         - name: WORDPRESS_DB_HOST
