@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dadosapp-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: dados.traitor.ar
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: dadosapp
+              port: 
+                number: 5000
+  tls:
+    - hosts:
+        - dados.traitor.ar
+      secretName: traitor-cert
