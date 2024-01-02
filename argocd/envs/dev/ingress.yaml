@@ -23,5 +23,5 @@ spec:
               name: https
   tls:
     - hosts:
-        - dados.traitor.ar
+        - argocd.traitor.ar
       secretName: traitor-cert
