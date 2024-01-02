@@ -43,8 +43,11 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  resources:
-   requests:
+  resources:    
+   limits:	
+      cpu: 500m	
+      memory: 256Mi
+   requests: 
       storage: 20Gi
 ---
 apiVersion: apps/v1
