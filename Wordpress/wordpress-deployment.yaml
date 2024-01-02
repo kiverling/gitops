@@ -31,7 +31,7 @@ spec:
               number: 80
     tls:
     - hosts:
-        - adminer.traitor.ar
+        - wordpress.traitor.ar
       secretName: traitor-cert
 ---
 apiVersion: v1
