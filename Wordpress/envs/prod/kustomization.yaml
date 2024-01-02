@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
  - mysql-deployment.yaml
  - wordpress-deployment.yaml
+ - namespace.yaml
 secretGenerator:
 - name: mysql-pass
   literals:
