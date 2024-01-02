@@ -19,7 +19,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: wordpress.traitor.ar
+  - host: wordpresstest.traitor.ar
     http:
       paths:
       - path: /
@@ -31,7 +31,7 @@ spec:
               number: 80
     tls:
     - hosts:
-        - wordpress.traitor.ar
+        - wordpresstest.traitor.ar
       secretName: traitor-cert
 ---
 apiVersion: v1
