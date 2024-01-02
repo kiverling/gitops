@@ -59,7 +59,7 @@ spec:
             name: adminer
             port:
               number: 8080
-    tls:
-    - hosts:
-        - adminer.traitor.ar
-      secretName: traitor-cert
+  tls:
+  - hosts:
+      - adminer.traitor.ar
+    secretName: traitor-cert
