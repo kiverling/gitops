@@ -7,4 +7,4 @@ secretGenerator:
 - name: mysql-pass
   literals:
   - password=YOUR_PASSWORD
-namespace: default
+namespace: wordpress-prod
