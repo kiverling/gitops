@@ -7,7 +7,7 @@ metadata:
 spec:
   ports:
     - port: 9090
-      nodePort: 39090
+      nodePort: 30090
   selector:
     app: prometheus
     tier: frontend
