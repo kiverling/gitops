@@ -4,7 +4,6 @@ metadata:
   name: config
   labels:
     name: config
-  namespace: monitoring
 data:
   prometheus.rules: |-
     groups:
