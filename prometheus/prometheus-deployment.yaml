@@ -54,7 +54,7 @@ spec:
         tier: frontend
     spec:
       containers:
-        - image: quay.io/prometheus/prometheus
+        - image: prom/prometheus
           resources:
             limits:
               memory: "256Mi"
