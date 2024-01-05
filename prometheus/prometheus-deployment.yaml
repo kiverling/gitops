@@ -7,11 +7,11 @@ metadata:
 spec:
   ports:
     - port: 9090
-      nodePort: 30090
   selector:
     app: prometheus
     tier: frontend
-  type: NodePort
+  type: ClusterIP
+
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -39,16 +39,6 @@ spec:
               memory: "256Mi"
               cpu: "500m"
           name: prometheus
-          # env:
-          #   - name: prometheus_DB_HOST
-          #     value: prometheus-mysql
-          #   - name: prometheus_DB_PASSWORD
-          #     valueFrom:
-          #       secretKeyRef:
-          #         name: mysql-pass
-          #         key: password
-          #   - name: prometheus_DB_USER
-          #     value: prometheus
           ports:
             - containerPort: 9090
               name: prometheus
