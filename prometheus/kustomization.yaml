@@ -3,9 +3,13 @@ kind: Kustomization
 resources:
   - prometheus-deployment.yaml
   - namespace.yaml
-  - prometheus.yml
-# secretGenerator:
-# - name: mysql-pass
-#   literals:
-#   - password=YOUR_PASSWORD
+  - grafana.yaml
+  - clusterrole.yaml
+
 namespace: prometheus
+
+configMapGenerator:
+  - name: config
+    files:
+      - config/prometheus.rules
+      - config/prometheus.yml
