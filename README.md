@@ -25,15 +25,32 @@ Asegúrate de tener instalado lo siguiente antes de comenzar:
 ### Argo CD
 
 1. Instala Argo CD siguiendo las [instrucciones oficiales](https://argoproj.github.io/argo-cd/getting_started/).
-2. Apunta Argo CD a este repositorio.
+1. Apunta Argo CD a este repositorio.
 
-```bash
-argocd repo add <nombre-repo> --repo <URL-repo> --type git
-```
-Sincroniza las aplicaciones en Argo CD.
-```bash
-argocd app sync <nombre-aplicacion>
-```
+   ```bash
+   argocd repo add <URL-repo>
+   ```
+1. Realizar un Port Forwarding para poder acceder a la API
+
+    ```bash
+    kubectl port-forward svc/argocd-server -n argocd 8080:443
+    ```
+1.  Obtener password inicial    
+    ```bash
+    argocd admin initial-password -n argocd
+    ```
+1. Login    
+    ```bash
+    argocd login localhost
+    ```
+1. Levantar aplicaciones
+    ```
+    kubectl apply -f applications/
+    ```
+1. Sincroniza las aplicaciones en Argo CD.
+    ```bash
+    argocd app sync argocd
+    ```
 ## Contribuir
 Si deseas contribuir al desarrollo de este proyecto, sigue estos pasos:
 

@@ -1,3 +1,5 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 metadata:
   name: argocd
   namespace: argocd
@@ -6,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: argocd/envs/devs
+    path: argocd/envs/dev
     repoURL: https://github.com/Kiverling/gitops.git
     targetRevision: HEAD
   syncPolicy:
