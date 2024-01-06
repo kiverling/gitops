@@ -27,3 +27,6 @@ spec:
                 secretName: traitor-cert
             paths:
               - /
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
