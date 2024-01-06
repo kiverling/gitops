@@ -1,0 +1,13 @@
+metadata:
+  name: wordpress
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: wordpress/envs/devs
+    repoURL: https://github.com/Kiverling/gitops.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
