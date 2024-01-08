@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: kustomize/wordpress/envs/devs
+    path: kustomize/wordpress/envs/dev
     repoURL: https://github.com/Kiverling/gitops.git
     targetRevision: HEAD
   syncPolicy:
