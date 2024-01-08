@@ -5,6 +5,7 @@ resources:
   - adminer.yaml
   - namespace.yaml
   - configmap.yaml
+  - cronjob.yaml
   - ../../base
 namespace: dadosapp
 patches:
