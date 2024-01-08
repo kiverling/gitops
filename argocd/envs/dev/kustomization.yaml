@@ -1,14 +1,15 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- ingress.yaml
-- ../../base
+  - ingress.yaml
+  - metrics.yaml
+  - ../../base
 configMapGenerator:
-- name: argocd-cm
-  namespace: argocd
-  behavior: merge
-  literals:
-  - accounts.tordek=apiKey, login
-  - accounts.tordek.enabled=true
-  - server.tls.enabled=true
-  - server.tls.secretName=argocd-tls-secret
+  - name: argocd-cm
+    namespace: argocd
+    behavior: merge
+    literals:
+      - accounts.tordek=apiKey, login
+      - accounts.tordek.enabled=true
+      - server.tls.enabled=true
+      - server.tls.secretName=argocd-tls-secret
