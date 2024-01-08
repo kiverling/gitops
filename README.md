@@ -51,20 +51,23 @@ Asegúrate de tener instalado lo siguiente antes de comenzar:
     ```bash
     argocd app sync argocd
     ```
+
+## Pasos siguientes 
+Para poder urtilizar el sitio es necesario agregar los dominios al archivo `hosts` y crear los secretos para TLS.   
 ## Contribuir
 Si deseas contribuir al desarrollo de este proyecto, sigue estos pasos:
 
 1. Haz un fork del repositorio.
-1. Crea una rama para tu nueva funcionalidad: git checkout -b feature/nueva-funcionalidad.
-1. Realiza tus cambios y haz commit: git commit -m "Agrega nueva funcionalidad".
-1. Haz push a tu rama: git push origin feature/nueva-funcionalidad.
+1. Crea una rama para tu nueva funcionalidad: `git checkout -b feature/nueva-funcionalidad`.
+1. Realiza tus cambios y haz commit: `git commit -m "Agrega nueva funcionalidad"`.
+1. Haz push a tu rama: `git push origin feature/nueva-funcionalidad`.
 1. Crea un Pull Request en GitHub.
 ## Problemas y Mejoras
 Si encuentras algún problema o tienes sugerencias para mejorar el proyecto, abre un issue.
 
 ## Licencia
 Este proyecto está bajo la licencia MIT.
-
-Recuerda personalizar la información según las necesidades específicas de tu proyecto, como los nombres de las carpetas, las aplicaciones, y otros detalles específicos de tu implementación de Argo CD. Además, asegúrate de incluir los enlaces correctos a las dependencias y documentación relacionada.
+## Autor
+Ricardo Daniel Kiverling (rdkiverling@gmail.com)
 
 
