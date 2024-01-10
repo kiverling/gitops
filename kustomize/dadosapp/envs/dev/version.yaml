@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: dadosapp
-          image: Kiverling/dados_app
+          image: Kiverling/dados_app:master
