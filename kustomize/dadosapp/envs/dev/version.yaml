@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: dadosapp
-          image: kiverling/dados_app:master
+          image: ghcr.io/kiverling/dados_app:master
