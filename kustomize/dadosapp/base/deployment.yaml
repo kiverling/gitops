@@ -15,7 +15,7 @@ spec:
         - name: dockerconfigjson-github-com
       containers:
         - name: dadosapp
-          image: ghcr.io/kiverling/dados_app:sha256-93b1d6f6138760f97b6464aaf2281084a1aa6e5b8d9ca63e4f1a71071e656f7b.sig
+          image: ghcr.io/kiverling/dados_app:v1.0.0
           resources:
             limits:
               memory: "256Mi"
