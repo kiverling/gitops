@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: dadosapp
 data:
-  MESSAGE: Mi Primera Chamba
+  NEXT_PUBLIC_MESSAGE: Mi Primera Chamba
