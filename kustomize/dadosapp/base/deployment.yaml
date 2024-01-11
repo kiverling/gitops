@@ -22,12 +22,6 @@ spec:
               cpu: "500m"
           ports:
             - containerPort: 5000
-          env:
-            - name: "MESSAGE"
-              valueFrom:
-                configMapKeyRef:
-                  name: dadosapp
-                  key: MESSAGE
 
           envFrom:
             - configMapRef:
