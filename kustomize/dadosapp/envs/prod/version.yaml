@@ -1,0 +1,10 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dadosapp
+spec:
+  template:
+    spec:
+      containers:
+        - name: dadosapp
+          image: ghcr.io/kiverling/dados_app:v2.0.0
