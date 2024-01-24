@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - ingress.yaml
   - metrics.yaml
-  - argocd-rbac-cm.yaml
   - ../../base
 configMapGenerator:
   - name: argocd-cm
@@ -14,3 +13,8 @@ configMapGenerator:
       - accounts.tordek.enabled=true
       - server.tls.enabled=true
       - server.tls.secretName=argocd-tls-secret
+  - name: argocd-rbac-cm
+    namespace: argocd
+    files:
+      - policy.default
+      - policy.csv

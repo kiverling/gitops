@@ -1,0 +1,6 @@
+    p, role:org-admin, applications, get, */*, allow
+    p, role:org-admin, clusters, get, *, allow
+    p, role:org-admin, repositories, get, *, allow
+    p, role:org-admin, projects, get, *, allow
+    p, role:org-admin, logs, get, *, allow
+    g, tordek, role:org-admin
