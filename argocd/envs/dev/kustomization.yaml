@@ -15,6 +15,7 @@ configMapGenerator:
       - server.tls.secretName=argocd-tls-secret
   - name: argocd-rbac-cm
     namespace: argocd
+    behavior: merge
     files:
       - policy.default
       - policy.csv
