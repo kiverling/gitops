@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ingress.yaml
   - metrics.yaml
+  - argocd-rbac-cm.yaml
   - ../../base
 configMapGenerator:
   - name: argocd-cm
